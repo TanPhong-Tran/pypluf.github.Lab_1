@@ -25,7 +25,7 @@ from sklearn.neural_network import MLPClassifier
 
 
 #Path of dataset
-path = 'https://raw.githubusercontent.com/pypluf/pypluf.github.Lab_1/master/Py4DS_Lab1_Dataset/spam.csv'
+path = 'https://raw.githubusercontent.com/pypluf/pypluf.github.Lab_1/master/Lab1/Py4DS_Lab1_Dataset/spam.csv'
 dataset_pd = pd.read_csv(path,delimiter = ',',header = None)
 dataset_np=np.genfromtxt(path,delimiter=',')
 
