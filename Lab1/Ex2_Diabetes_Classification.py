@@ -27,7 +27,8 @@ from sklearn.model_selection import cross_val_score
 
 col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
 #Load dataset
-df = pd.read_csv("diabetes.csv",header = 0, names = col_names)
+path = 'https://raw.githubusercontent.com/pypluf/pypluf.github.Lab_1/master/Lab1/Py4DS_Lab1_Dataset/diabetes.csv'
+df = pd.read_csv(path,header = 0, names = col_names)
 
 df.head()
 
