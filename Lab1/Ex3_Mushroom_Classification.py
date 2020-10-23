@@ -35,7 +35,7 @@ from sklearn.model_selection import cross_val_score
 
 
 # Load dataset
-path = 'https://raw.githubusercontent.com/pypluf/pypluf.github.Lab_1/master/Py4DS_Lab1_Dataset/mushrooms.csv'
+path = 'https://raw.githubusercontent.com/pypluf/pypluf.github.Lab_1/master/Lab1/Py4DS_Lab1_Dataset/mushrooms.csv'
 df = pd.read_csv(path)
 df.head()
 
