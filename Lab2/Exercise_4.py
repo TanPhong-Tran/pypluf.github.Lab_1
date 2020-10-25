@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
 
 
 import numpy as np
@@ -12,22 +8,10 @@ from sklearn.preprocessing import LabelEncoder
 import os
 
 
-# In[15]:
-
-
-
 df= pd.read_csv('HappinessReport2020.csv')
 df.head()
 
-
-# In[16]:
-
-
 df.columns
-
-
-# In[17]:
-
 
 col_rename = {'Country name':'Country', 'Regional indicator':'Region', 'Ladder score': 'Ladder',
                   'Standard error of ladder score':'Standard Error', 'Logged GDP per capita':'Logged GDPPC',
@@ -35,39 +19,31 @@ col_rename = {'Country name':'Country', 'Regional indicator':'Region', 'Ladder s
                   'Freedom to make life choices':'Freedom', 'Perceptions of corruption': 'Corruption'}
 
 
-# In[18]:
-
-
 df.rename(columns = col_rename, inplace = True)
 df.head()
-
-
-# In[19]:
 
 
 df_drop = df.drop(['Standard Error', 'upperwhisker', 'upperwhisker', 'lowerwhisker', 'Explained by: Log GDP per capita', 'Explained by: Social support', 'Explained by: Healthy life expectancy', 'Explained by: Freedom to make life choices', 'Explained by: Generosity', 'Explained by: Perceptions of corruption'], axis=1)
 
 
-# In[20]:
-
 
 plt.rcParams['figure.figsize'] = (12,8)
 sns.heatmap(df_drop.corr(), cmap = 'copper', annot = True)
 plt.show()
-
-
-# In[21]:
-
+"""
+Ladder có mối tương quan rất cao với GDP , Social support và Healthy life expectancy.
+Ngược lại, có mối quan hệ rất thấp với Perceptions of corruption.
+"""
 
 fig = plt.figure(figsize = (18, 14))
 ax = plt.axes()
-
+"""
+Ta thấy được phân bổ  cáu quosc gia theo khu vực và mức độ hạnh phúc khác nhau giữa các khu vực
+"""
 countplot = sns.countplot('Region', data = df, saturation = 0.8, palette = 'tab10')
 countplot.set_xticklabels(countplot.get_xticklabels(), rotation = 90)
 countplot.set_title("Countplot by Region", y = 1.05);
 
-
-# In[23]:
 
 
 feature_cols = ['Logged GDPPC', 'Social Support', 'Life Expectancy', 'Freedom', 'Generosity', 'Corruption']
@@ -84,9 +60,9 @@ cb = plt.colorbar()
 cb.ax.tick_params(labelsize=14)
 
 plt.title('Correlation Matrix', fontsize = 24, y = 1.2);
-
-
-# In[28]:
+"""
+Xem xét các mối quan hệ giữa mỗi trong số sáu giá trị được đo lường
+"""
 
 
 fig, axes = plt.subplots(2, 3, figsize = (20, 12))
@@ -99,15 +75,11 @@ for i, ax in enumerate(axes.flat):
 plt.show()
 
 
-# In[29]:
-
-
 pairplot = sns.pairplot(df, hue = 'Quartile', vars = feature_cols, corner = False)
 pairplot.fig.suptitle("Pairplot of the 6 Happiness Metrics", fontsize = 24, y = 1.05);
 plt.show()
 
 
-# In[ ]:
 
 
 

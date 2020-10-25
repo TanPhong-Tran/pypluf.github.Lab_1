@@ -26,7 +26,7 @@ for i in range(1,17):
 sns.pairplot(df,hue = "Class")
 plt.show()
 """
-Kiểm tra độ tương quan giauwx các feagure thông qua các data point, ta thấy nếu phần trùng lập càng lớn thì độ tương quang giữa chúng càng cao
+Kiểm tra độ tương quan giữa các feagure thông qua các data point, ta thấy nếu phần trùng lập càng lớn thì độ tương quang giữa chúng càng cao
 """
 
 
