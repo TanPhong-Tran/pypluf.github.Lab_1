@@ -116,14 +116,14 @@ def main():
 
    # Show the information of data
    print("\n\n####### 1. LOAD DATASET #######\n\n")
-   print("Show the information of data")
-   print("Print the 5 first line of data")
+   print("\n\nShow the information of data\n\n")
+   print("\n\nPrint the 5 first line of data\n\n")
    print(titanic_train.head())
-   print("Print the information of data")
+   print("\n\nPrint the information of data\n\n")
    print(titanic_train.info())
-   print("Caculate the sum of null value of data")
+   print("\n\nCaculate the sum of null value of data\n\n")
    print(titanic_train.isna().sum())
-   print("Describe data")
+   print("\n\nDescribe data\n\n")
    print(titanic_train.describe())
    
    
